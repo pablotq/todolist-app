@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;  
+    font-display: swap;
+    src: url('/fonts/JosefinSans-Regular.ttf') format('truetype');
+}
+
+@theme {
+  /* ---------- Core Colors ---------- */
+  --color-bright-blue: hsl(220, 98%, 61%);
+  --color-check-bg: linear-gradient(hsl(192,100%,67%),hsl(280,87%,65%));
+
+  /* ---------- Light Theme ---------- */
+  --color-light-gray-50: hsl(0, 0%, 98%);
+  --color-light-purple-300: hsl(234, 39%, 85%);
+  --color-light-gray-300: hsl(233, 11%, 84%);
+  --color-light-gray-600: hsl(236, 9%, 61%);
+  --color-light-navy-850: hsl(235, 19%, 35%);
+
+  /* ---------- Dark Theme ---------- */
+  --color-dark-navy-950: hsl(235, 21%, 11%);
+  --color-dark-navy-900: hsl(235, 24%, 19%);
+  --color-dark-purple-300: hsl(234, 39%, 85%);
+  --color-dark-purple-100-hover: hsl(236, 33%, 92%);
+  --color-dark-purple-600: hsl(235, 16%, 43%);
+  --color-dark-purple-700: hsl(233, 14%, 35%);
+  --color-dark-purple-800: hsl(237, 14%, 26%);
+  --color-dark-gray-600: hsl(236, 9%, 61%);
+
+  /* ---------- Typography ---------- */
+  /* --font-family-base: 'Josefin Sans', sans-serif; */
+  
+  --font-primary: 'Josefin Sans', sans-serif;
+  --font-size-base: 18px;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* ---------- Layout ---------- */
+  --max-width-mobile: 375px;
+  --max-width-desktop: 1440px;
+}
+body {
+  font-family: var(--font-primary);
+}
+
+@layer base{
+  .theme-light{
+    @apply bg-[url('/images/bg-desktop-light.jpg')] bg-cover bg-no-repeat bg-center h-80
+  }
+
+  .theme-dark{
+     @apply bg-[url('/images/bg-desktop-dark.jpg')] bg-cover bg-no-repeat bg-center h-80
+  }
+}
