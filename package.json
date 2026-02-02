@@ -1,6 +1,4 @@
 {
-  "homepage": "https://pablotq.github.io/todolist-app",
-  "name": "todolist-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,9 +6,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.16",
