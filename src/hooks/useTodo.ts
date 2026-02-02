@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useEffect, useState, type FormEvent } from 'react';
 
 export interface Todo {
     id: number;
@@ -6,9 +6,22 @@ export interface Todo {
     completed: boolean;
 }
 
+const localStorageKey = "@todoList: list";
+
 export const useTodo = () => {
 
-    const [todolist, setTodolist] = useState<Todo[]>([]);
+    const [todolist, setTodolist] = useState<Todo[]>(() => {
+         const todoListFromLocalStorage = localStorage.getItem(localStorageKey);
+
+        const parsedList = todoListFromLocalStorage !== null ? JSON.parse(todoListFromLocalStorage) : [];
+
+        return parsedList
+    });
+
+    useEffect(() => {
+        localStorage.setItem(localStorageKey, JSON.stringify(todolist))
+    }, [todolist]);
+
     const [filter, setFilter] = useState<"all" | "completed" | "active">("all");
 
     const addTodo = (event: FormEvent<HTMLFormElement>) => {
