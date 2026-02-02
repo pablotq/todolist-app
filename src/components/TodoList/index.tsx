@@ -28,9 +28,9 @@ const TodoList = ({ todoList, toggleTodoCompleted, setFilter, filter, clearCompl
             todoList.map((todo) => (
               <li className={`p-6 border-b ${themeConfig[theme].todo.borderColor}`} key={todo.id}>
                 <div className='flex items-center gap-4'>
-                  <span className='w-6 h-6 rounded-full hover:bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))] hover:p-px'>
+                  <span className='w-6.5 h-6.5 rounded-2xl hover:bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))] hover:p-px'>
 
-                    <button className={`w-full h-full border ${themeConfig[theme].todo.borderColor} rounded-full cursor-pointer ${themeConfig[theme].todo.backgroundColor} ${todo.completed ? 'bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))]' : ''}`}
+                    <button className={`w-6 h-6 border ${themeConfig[theme].todo.borderColor} rounded-2xl cursor-pointer ${themeConfig[theme].todo.backgroundColor} ${todo.completed ? 'bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))]' : ''}`}
                       onClick={() => toggleTodoCompleted(todo.id)}
                     >
 
